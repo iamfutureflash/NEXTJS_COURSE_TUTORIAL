@@ -1,8 +1,12 @@
-import { memo } from "react";
+import Link from "next/link";
 
-const page = () => {
+export default function Home() {
   return (
-    <h1>Welcome home!</h1>
-  )
+    <div>
+      <h1>Welcome home!</h1>
+      <Link href="/blog">Blog</Link>
+      <Link href="/products">Products</Link>
+      <Link href="/news">News</Link>
+    </div>
+  );
 }
-export default memo(page);

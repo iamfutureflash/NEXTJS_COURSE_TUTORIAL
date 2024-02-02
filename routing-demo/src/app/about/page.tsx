@@ -1,10 +1,7 @@
-import { memo } from "react"
 export const metadata = {
-  title:'About Codevolution Puneet',
+  title: "About Codevolution",
+};
+
+export default function About() {
+  return <h1>About page</h1>;
 }
-const page = () => {
-  return (
-    <h1>About page!</h1>
-  )
-}
-export default memo(page)

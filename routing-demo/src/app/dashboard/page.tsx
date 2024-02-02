@@ -1,9 +1,7 @@
-import React from 'react'
-
-const Dashboard = () => {
-  return (
-    <h1>Dashboard View</h1>
-  )
+function BarChart() {
+  return <h1>Bar chart</h1>;
 }
 
-export default Dashboard
+export default function Dashboard() {
+  return <h1>Dashboard</h1>;
+}

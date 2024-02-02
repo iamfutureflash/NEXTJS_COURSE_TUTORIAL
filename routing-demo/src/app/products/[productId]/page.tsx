@@ -1,15 +1,23 @@
-import React, { memo } from 'react'
-import { Metadata } from "next"
-type Props = { params: { productId: string; }; };
+import { Metadata } from "next";
 
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
-    const title = await new Promise((resolve, reject) => { setTimeout(() => { resolve(`iPhone ${params.productId}`) }, 100) });
-    return { title: `Detail about product ${title}`, };
+type Props = {
+  params: { productId: string };
 };
 
-const ProductDetails = ({ params, }: Props) => {
-    console.log('sdfksdjfoijso', params);
-    return <h1>Detail about product {params.productId}</h1>
-}
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { productId } = params;
+  const title = await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(productId);
+    }, 100);
+  });
+  return {
+    title: `Product ${title}`,
+  };
+};
 
-export default memo(ProductDetails)
+export default function ProductDetails({ params }: Props) {
+  return <h1>Details about product {params.productId}</h1>;
+}
